@@ -164,7 +164,7 @@
     </div>
     
     <div class="content" v-pre>
-        <h1 id="Fedora-RISCV-Installing-Unofficial"><a href="#Fedora-RISCV-Installing-Unofficial" class="headerlink" title="Fedora-RISCV-Installing(Unofficial)"></a>Fedora-RISCV-Installing(Unofficial)</h1><h2 id="Boot-under-QEMU"><a href="#Boot-under-QEMU" class="headerlink" title="Boot under QEMU"></a>Boot under QEMU</h2><pre><code>#Download disk image
+        <h1 id="Fedora-RISCV-Installing-Unofficial"><a href="#Fedora-RISCV-Installing-Unofficial" class="headerlink" title="Fedora-RISCV-Installing(Unofficial)"></a>Fedora-RISCV-Installing(Unofficial)</h1><h2 id="Boot-under-QEMU"><a href="#Boot-under-QEMU" class="headerlink" title="Boot under QEMU"></a>Boot under QEMU</h2><pre><code class="bash">#Download disk image
 wget https://dl.fedoraproject.org/pub/alt/risc-v/disk_images/Fedora-Developer-38-20230519.n.0.SiFive.Unmatched.and.QEMU/Fedora-Developer-38-20230519.n.0-nvme.raw.img.xz
 wget https://dl.fedoraproject.org/pub/alt/risc-v/disk_images/Fedora-Developer-38-20230519.n.0.SiFive.Unmatched.and.QEMU/Fedora-Developer-38-20230519.n.0-nvme.raw.img.xz.sha512sum
 
@@ -180,7 +180,7 @@ pushd u
 rpm2cpio http://fedora.riscv.rocks/kojifiles/packages/uboot-tools/2023.04/1.4.riscv64.fc38/noarch/uboot-images-riscv64-2023.04-1.4.riscv64.fc38.noarch.rpm | cpio -dvim
 popd
 
-#use kpartx:
+# use kpartx:
 mkdir -p /tmp/disk_img
 sudo kpartx -a -v Fedora-Developer-38-20230519.n.0-nvme.raw.img
 # Output example
@@ -192,15 +192,15 @@ sudo mount /dev/mapper/loop2p1 /tmp/disk_img
 sudo nvim /tmp/disk_img/extlinux/extlinux.conf
 
 # Existing boot entry
- 9 label Fedora-Developer-37-20221130.n.0 (6.0.10-300.0.riscv64.fc37.riscv64)      
- 10     kernel /vmlinuz-6.0.10-300.0.riscv64.fc37.riscv64                           
+ 9 label Fedora-Developer-37-20221130.n.0 (6.0.10-300.0.riscv64.fc37.riscv64)
+ 10     kernel /vmlinuz-6.0.10-300.0.riscv64.fc37.riscv64
  11     append ro root=UUID=56f56257-a0d4-4865-a531-ade6042a110c rhgb quiet LANG=en_US.UTF-8 console=ttySIF0,115200 earlycon
- 12     fdtdir /dtb-6.0.10-300.0.riscv64.fc38.riscv64/                              
+ 12     fdtdir /dtb-6.0.10-300.0.riscv64.fc38.riscv64/
  13     initrd /initramfs-6.4.12-200.0.riscv64.fc38.riscv64.img
 
 # Modified
-  9 label Fedora Linux (6.4.12-200.0.riscv64.fc38.riscv64) 38 (Thirty Eight)     
- 10     kernel /vmlinuz-6.4.12-200.0.riscv64.fc38.riscv64                           
+  9 label Fedora Linux (6.4.12-200.0.riscv64.fc38.riscv64) 38 (Thirty Eight)
+ 10     kernel /vmlinuz-6.4.12-200.0.riscv64.fc38.riscv64
  11     append ro root=UUID=56f56257-a0d4-4865-a531-ade6042a110c rhgb quiet LANG=en_US.UTF-8 console=ttyS0 earlycon
  12     initrd /initramfs-6.4.12-200.0.riscv64.fc38.riscv64.img
 
@@ -219,6 +219,7 @@ qemu-system-riscv64 \
   -device virtio-net-device,netdev=usernet \
   -netdev user,id=usernet,hostfwd=tcp::10000-:22
 </code></pre>
+<p>Credit: <a target="_blank" rel="noopener" href="https://fedoraproject.org/wiki/Architectures/RISC-V/Installing">https://fedoraproject.org/wiki/Architectures/RISC-V/Installing</a></p>
 
     </div>
     
