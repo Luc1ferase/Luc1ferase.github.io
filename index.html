@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>荧光素酶的博客</title>
+    <title>luciferase&#39;s blog</title>
     <meta name="author" content="luciferase" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -55,7 +55,7 @@
         <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
     <nav id="desktop-menu">
         <a class="title" href="/">
-            <span>荧光素酶的博客</span>
+            <span>LUCIFERASE&#39;S BLOG</span>
         </a>
         
         <a href="/">
@@ -83,11 +83,16 @@
             <span>&ensp;Tags</span>
         </a>
         
+        <a target="_blank" rel="noopener" href="https://status.luciferase.site/">
+            <i class="fa-solid fa-servers fa-fw"></i>
+            <span>&ensp;ServerStatus</span>
+        </a>
+        
     </nav>
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
             <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;荧光素酶的博客</span>
+            <span>&emsp;LUCIFERASE&#39;S BLOG</span>
         </div>
         <transition name="slide">
             <div class="items" v-show="showMenuItems">
@@ -137,6 +142,15 @@
                     </div>
                 </a>
                 
+                <a target="_blank" rel="noopener" href="https://status.luciferase.site/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-servers fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">ServerStatus</div>
+                    </div>
+                </a>
+                
             </div>
         </transition>
     </nav>
@@ -155,7 +169,7 @@
         <span class="loop"></span>
         <span class="info">
             <div class="wrap">
-                <h1>荧光素酶的博客</h1>
+                <h1>luciferase&#39;s blog</h1>
                 <h3></h3>
                 <h5></h5>
             </div>
@@ -339,7 +353,7 @@ qemu-system-riscv64 \
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2023 荧光素酶的博客
+            2022 - 2023 luciferase&#39;s blog
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
