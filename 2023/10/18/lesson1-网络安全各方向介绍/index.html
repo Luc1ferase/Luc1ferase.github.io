@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>luciferase&#39;s blog</title>
+    <title>lesson1_网络安全各方向介绍 | luciferase&#39;s blog</title>
     <meta name="author" content="luciferase" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -36,7 +36,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -160,32 +162,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>luciferase&#39;s blog</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>lesson1_网络安全各方向介绍</h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/10/18/lesson1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%90%84%E6%96%B9%E5%90%91%E4%BB%8B%E7%BB%8D/">
-        <h2 class="post-title">lesson1_网络安全各方向介绍</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -194,11 +175,23 @@
         </span>
         
         
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
             
-            <h2 id="主要就业发展方向"><a href="#主要就业发展方向" class="headerlink" title="主要就业发展方向"></a>主要就业发展方向</h2><h3 id="web-安全"><a href="#web-安全" class="headerlink" title="web 安全"></a>web 安全</h3><p>这个方向更符合于大部分人对“黑客”的认知，他们能够黑手机、黑电脑、黑网站、黑服务器、黑内网，万物皆可黑。<br>相比二进制安全方向，这个方向初期更容易入门一些，掌握一些基本技术，拿起各种现成的工具就可以开黑了。<br>不过，要想从脚本小子变成黑客大神，这个方向越往后，需要学习和掌握的东西就多了。</p>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #ff7d73">给NSS新人的教程</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="主要就业发展方向"><a href="#主要就业发展方向" class="headerlink" title="主要就业发展方向"></a>主要就业发展方向</h2><h3 id="web-安全"><a href="#web-安全" class="headerlink" title="web 安全"></a>web 安全</h3><p>这个方向更符合于大部分人对“黑客”的认知，他们能够黑手机、黑电脑、黑网站、黑服务器、黑内网，万物皆可黑。<br>相比二进制安全方向，这个方向初期更容易入门一些，掌握一些基本技术，拿起各种现成的工具就可以开黑了。<br>不过，要想从脚本小子变成黑客大神，这个方向越往后，需要学习和掌握的东西就多了。</p>
 <p>比较直白的一个定义是，Web 安全是包括网站、网络应用、网络服务在内的一系列安全内容，或者说，Web 安全关注的是应用层的安全，尤其是细化到与网络相关内容的安全。Web 安全需要学习的内容主要包括网络协议本身、网络应用的特性与对应的安全问题、各种工具的使用。</p>
 <p>学会一定的基础之后自己去尝试着挖挖 SRC。</p>
 <p>就业岗位多为：<code>红队</code>、<code>安全研究</code>、<code>安服</code>、<code>代码审计</code>、<code>安全开发</code>等</p>
@@ -235,251 +228,13 @@
 <p>RCE，任意代码执行（简称 ACE）是指攻击者能够让目标电脑或目标进程中执行任意命令或代码[1]。如果系统有地方可以被黑客利用以执行任意代码，则此处被称为任意代码执行漏洞。特别设计利用此一漏洞的程序，称为任意代码执行漏洞利用。可以通过网络（尤其是通过互联网等广域网）让目标电脑（远程电脑）执行任意代码的能力称为远程代码执行（RCE）。</p>
 <h3 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h3><p><a target="_blank" rel="noopener" href="https://github.com/LyleMi/Learn-Web-Hacking">https://github.com/LyleMi/Learn-Web-Hacking</a><br><a target="_blank" rel="noopener" href="https://xie.infoq.cn/article/87fc62104c5b693c40cc3a1f0">https://xie.infoq.cn/article/87fc62104c5b693c40cc3a1f0</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">https://zh.wikipedia.org/zh-hans/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8</a><br><a target="_blank" rel="noopener" href="https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/">https://howiezhao.github.io/2018/04/29/payload-shellcode-exp-poc/</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E5%85%AC%E5%85%B1%E6%BC%8F%E6%B4%9E%E5%92%8C%E6%9A%B4%E9%9C%B2">https://zh.wikipedia.org/zh-cn/%E5%85%AC%E5%85%B1%E6%BC%8F%E6%B4%9E%E5%92%8C%E6%9A%B4%E9%9C%B2</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C">https://zh.wikipedia.org/zh-cn/%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C</a></p>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #ffa2c4">给NSS新人的教程</a>
-        </span>
-        
-    </div>
-    <a href="/2023/10/18/lesson1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%90%84%E6%96%B9%E5%90%91%E4%BB%8B%E7%BB%8D/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/10/18/lesson0-%E5%B7%A5%E4%BD%9C%E5%AE%A4%E4%BB%8B%E7%BB%8D/">
-        <h2 class="post-title">lesson0_工作室介绍</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/10/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><p>大连东软信息学院网络安全工作室(Neusoft Security Studio,简称NSS)，位于软件园校区A3-200，是由大东软的网络安全爱好者们和网络信息中心共同发起并组成的一个全校性的群众团体。成立的目的是提供一个供爱好者们互相交流学习的平台。</p>
-<p>社团氛围自由开放，没有上下级制度，没有官僚体制，不设门槛，一切以交流长进技术为最终目的，是与ACM，微光并行的学校三大技术社团之一。<br><img src="https://s2.loli.net/2023/10/18/m2yYAqPDEjZtdpz.jpg" alt="微信图片_20231018141537.jpg"><br><img src="https://s2.loli.net/2023/10/18/jUXf5Yc4rDW1Hqt.jpg" alt="微信图片_20231018141340.jpg"><br><img src="https://s2.loli.net/2023/10/18/MB2slWqg7aSoxb4.jpg" alt="微信图片_20231018141354.jpg"><br><em>（工作室内电子垃圾众多，包括几台废弃主机、交换机、软路由、机架式服务器、电焊、热风枪、各种开发板等等，喜欢折腾的同学应该会玩的开心）</em></p>
-<h2 id="特色活动"><a href="#特色活动" class="headerlink" title="特色活动"></a>特色活动</h2><ul>
-<li>每周小聚</li>
-</ul>
-<p>每周，通常是周六晚上，在工作室&#x2F;工作室旁边的教室举行每周小聚，会同时开启钉钉会议，使得博川校区的同学们也能够参与进来，内容主要是同学们自由分享最近学到的新技术、新知识。不限制分享内容，最好是网络安全相关，但是运维、开发、硬件等计算机相关方面的也欢迎。</p>
-<ul>
-<li>网络安全竞赛</li>
-</ul>
-<p>一年大约10次左右的竞赛参赛机会,包含市级省级国家级和各个难度梯度以及各种比赛形式的比赛，自由组队，自由决定是否参加，是很好的实践学到的理论知识的机会，一般获奖会有较多奖金，上限可达1w&#x2F;次。</p>
-<ul>
-<li>网络安全宣讲</li>
-</ul>
-<p>本校老师一直致力于申请网络空间安全专业但未果，目前我校一部分专业已经开始教授网络安全方面的知识，届时会有一些程度较好的同学受到系里邀请，作为特邀讲师为同学们科普和讲授一些网络安全方面的知识。</p>
-<ul>
-<li>团建</li>
-</ul>
-<p>基本上一年一次，不强制参加，费用视社团经费情况报销。</p>
-<h2 id="考核形式"><a href="#考核形式" class="headerlink" title="考核形式"></a>考核形式</h2><p>时间一般在下半学期开学之后的一段时间，考题为<code>CTF+靶机</code>，做出<code>50%</code>以上即可通过考核成为正式成员，题目均为<code>入门</code>和<code>简单</code>难度，只要跟上进度就能通过，不要太有心理压力。</p>
-<p>基础稍差的同学也会视<code>进步情况</code>决定是否通过。</p>
-<h2 id="成为工作室正式成员后你能获得的"><a href="#成为工作室正式成员后你能获得的" class="headerlink" title="成为工作室正式成员后你能获得的"></a>成为工作室正式成员后你能获得的</h2><ul>
-<li><p>加入核心小群，跟大佬面对面交流</p>
-</li>
-<li><p>各安全大厂的内推，包括但不限于奇安信、绿盟、深信服、暗泉等等</p>
-</li>
-<li><p>工作室内部WIKI、Gitlab、网盘、校内服务器等资源的使用权</p>
-</li>
-<li><p>工作室钥匙</p>
-</li>
-</ul>
-<h2 id="工作室内注意事项"><a href="#工作室内注意事项" class="headerlink" title="工作室内注意事项"></a>工作室内注意事项</h2><ul>
-<li><p>获得比赛奖金、通过工作室介绍的项目&#x2F;短期工作，要拿出<code>5%</code>当做社团经费，上限为<code>500元</code>，经费账目完全公开，可以对经费的用途提出质疑。经费用作工作室日常物件维护、团建等</p>
-</li>
-<li><p>禁止在工作室内抽烟</p>
-</li>
-<li><p>注意用电安全，不要损坏公共财产</p>
-</li>
-<li><p>工作室有门锁，来之前可以问一问工作室有没有人</p>
-</li>
-<li><p>书架上陈列的书可以任意借阅观看，但是带走要告知一声</p>
-</li>
-<li><p>新入社的同学阅读一下<a target="_blank" rel="noopener" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md">提问的智慧</a>，提高交流效率。</p>
-</li>
-</ul>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #00bcd4">给NSS新人的教程</a>
-        </span>
-        
-    </div>
-    <a href="/2023/10/18/lesson0-%E5%B7%A5%E4%BD%9C%E5%AE%A4%E4%BB%8B%E7%BB%8D/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/10/08/Fedora-RISCV-Installing/">
-        <h2 class="post-title">Fedora-RISCV-Installing</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/10/8
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="Fedora-RISCV-Installing-Unofficial"><a href="#Fedora-RISCV-Installing-Unofficial" class="headerlink" title="Fedora-RISCV-Installing(Unofficial)"></a>Fedora-RISCV-Installing(Unofficial)</h1><h2 id="Boot-under-QEMU"><a href="#Boot-under-QEMU" class="headerlink" title="Boot under QEMU"></a>Boot under QEMU</h2><pre><code class="bash">#Download disk image
-wget https://dl.fedoraproject.org/pub/alt/risc-v/disk_images/Fedora-Developer-38-20230519.n.0.SiFive.Unmatched.and.QEMU/Fedora-Developer-38-20230519.n.0-nvme.raw.img.xz
-wget https://dl.fedoraproject.org/pub/alt/risc-v/disk_images/Fedora-Developer-38-20230519.n.0.SiFive.Unmatched.and.QEMU/Fedora-Developer-38-20230519.n.0-nvme.raw.img.xz.sha512sum
-
-# Verify
-sha512sum -c *.sha512sum
-
-# Uncompress
-unxz Fedora-Developer-38-20230519.n.0-nvme.raw.img.xz
-
-# Download the latest U-Boot (we need U-Boot SPL and U-Boot ITB files)
-mkdir u
-pushd u
-rpm2cpio http://fedora.riscv.rocks/kojifiles/packages/uboot-tools/2023.04/1.4.riscv64.fc38/noarch/uboot-images-riscv64-2023.04-1.4.riscv64.fc38.noarch.rpm | cpio -dvim
-popd
-
-# use kpartx:
-mkdir -p /tmp/disk_img
-sudo kpartx -a -v Fedora-Developer-38-20230519.n.0-nvme.raw.img
-# Output example
-add map loop2p1 (253:4): 0 1433600 linear 7:2 34
-add map loop2p2 (253:5): 0 19537853 linear 7:2 1433634
-# We need to mount the 1st partition (or /boot partition)
-sudo mount /dev/mapper/loop2p1 /tmp/disk_img
-# Edit extlinux.conf
-sudo nvim /tmp/disk_img/extlinux/extlinux.conf
-
-# Existing boot entry
- 9 label Fedora-Developer-37-20221130.n.0 (6.0.10-300.0.riscv64.fc37.riscv64)
- 10     kernel /vmlinuz-6.0.10-300.0.riscv64.fc37.riscv64
- 11     append ro root=UUID=56f56257-a0d4-4865-a531-ade6042a110c rhgb quiet LANG=en_US.UTF-8 console=ttySIF0,115200 earlycon
- 12     fdtdir /dtb-6.0.10-300.0.riscv64.fc38.riscv64/
- 13     initrd /initramfs-6.4.12-200.0.riscv64.fc38.riscv64.img
-
-# Modified
-  9 label Fedora Linux (6.4.12-200.0.riscv64.fc38.riscv64) 38 (Thirty Eight)
- 10     kernel /vmlinuz-6.4.12-200.0.riscv64.fc38.riscv64
- 11     append ro root=UUID=56f56257-a0d4-4865-a531-ade6042a110c rhgb quiet LANG=en_US.UTF-8 console=ttyS0 earlycon
- 12     initrd /initramfs-6.4.12-200.0.riscv64.fc38.riscv64.img
-
- # Launch QEMU
-qemu-system-riscv64 \
-  -bios u/usr/share/uboot/qemu-riscv64_spl/u-boot-spl.bin \
-  -nographic \
-  -machine virt \
-  -smp 4 \
-  -m 8G \
-  -device loader,file=u/usr/share/uboot/qemu-riscv64_spl/u-boot.itb,addr=0x80200000 \
-  -object rng-random,filename=/dev/urandom,id=rng0 \
-  -device virtio-rng-device,rng=rng0 \
-  -device virtio-blk-device,drive=hd0 \
-  -drive file=Fedora-Developer-38-20230519.n.0-nvme.raw.img,format=raw,id=hd0 \
-  -device virtio-net-device,netdev=usernet \
-  -netdev user,id=usernet,hostfwd=tcp::10000-:22
-</code></pre>
-<p>Credit: <a target="_blank" rel="noopener" href="https://fedoraproject.org/wiki/Architectures/RISC-V/Installing">https://fedoraproject.org/wiki/Architectures/RISC-V/Installing</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/RISC-V/" style="color: #ff7d73">RISC-V</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/QEMU/" style="color: #ffa2c4">QEMU</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
-        </span>
-        
-    </div>
-    <a href="/2023/10/08/Fedora-RISCV-Installing/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
     
-    <span class="current">1</span>
     
     
     
     
-</div>
-
-    </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">luciferase</div>
-        <div class="description">
-            <p>Description<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
     
 </div>
 
@@ -511,6 +266,12 @@ qemu-system-riscv64 \
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+
+
+
+
     
 </body>
 </html>
