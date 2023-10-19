@@ -181,6 +181,118 @@
         
 
 <div class="post">
+    <a href="/2023/10/19/lesson2-%E5%88%9D%E8%AF%86linux/">
+        <h2 class="post-title">lesson2_初识linux</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/19
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="linux简介"><a href="#linux简介" class="headerlink" title="linux简介"></a>linux简介</h2><p>Linux是一种自由和开放源码的类UNIX操作系统。该操作系统的内核由林纳斯·托瓦兹在1991年10月5日首次发布，再加上用户空间的应用程序之后，就成为了Linux操作系统。Linux也是自由软件和开放源代码软件发展中最著名的例子。只要遵循GNU 通用公共许可证（GPL），任何个人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。大多数Linux系统还包括像提供GUI的X Window之类的程序。除了一部分专家之外，大多数人都是直接使用Linux 发行版，而不是自己选择每一样组件或自行设置。</p>
+<p>Linux严格来说是单指操作系统的内核，因操作系统中包含了许多用户图形接口和其他实用工具。如今Linux常用来指基于Linux的完整操作系统，内核则改以Linux内核称之。由于这些支持用户空间的系统工具和库主要由理查德·斯托曼于1983年发起的GNU计划提供，自由软件基金会提议将其组合系统命名为GNU&#x2F;Linux，但Linux不属于GNU计划，这个名称并没有得到社群的一致认同。</p>
+<p>Linux最初是作为支持英特尔x86架构的个人电脑的一个自由操作系统。目前Linux已经被移植到更多的计算机硬件平台，远远超出其他任何操作系统。Linux可以运行在服务器和其他大型平台之上，如大型计算机和超级计算机。世界上500个最快的超级计算机已100％运行Linux发行版或变种。Linux也广泛应用在嵌入式系统上，如手机（Mobile Phone）、平板电脑（Tablet）、路由器（Router）、电视（TV）和电子游戏机等。在移动设备上广泛使用的Android操作系统就是建立在Linux内核之上。</p>
+<p>通常情况下，Linux被打包成供个人计算机和服务器使用的Linux发行版，一些流行的主流Linux发布版，包括Debian（及其派生版本Ubuntu、Linux Mint）、Fedora（及其相关版本Red Hat Enterprise Linux）和openSUSE等。Linux发行版包含Linux内核和支撑内核的实用程序和库，通常还带有大量可以满足各类需求的应用程序。个人计算机使用的Linux发行版通常包含X Window和一个相应的桌面环境，如GNOME或KDE。桌面Linux操作系统常用的应用程序，包括Firefox网页浏览器、LibreOffice办公软件、GIMP图像处理工具等。由于Linux是自由软件，任何人都可以创建一个符合自己需求的Linux发行版。<br><img src="https://media.geeksforgeeks.org/wp-content/uploads/s2-1.jpg" alt="linux"></p>
+<center>Tux是Linux官方的吉祥物，于1996年由Larry Ewing创造</center>
+
+<h2 id="kali-linux介绍"><a href="#kali-linux介绍" class="headerlink" title="kali linux介绍"></a>kali linux介绍</h2><p>Kali Linux是基于Debian的Linux发行版，设计用于数字鉴识和渗透测试。由Offensive Security公司维护和资助。</p>
+<p>Kali Linux内置了大约600个渗透测试程序（工具），包括Armitage（图形化网络攻击管理工具）、Nmap（端口扫描工具）、Wireshark（数据包分析器）、Metasploit（渗透测试框架）、John the Ripper（密码破解器）、sqlmap（自动SQL注入和数据库接管工具）、Aircrack-ng（用于渗透测试无线局域网的软件包）、Burp suite以及OWASP ZAP网络应用安全扫描器等。<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Kali_Linux_2.0_wordmark.svg/1200px-Kali_Linux_2.0_wordmark.svg.png" jsaction="VQAsE" class="sFlh5c pT0Scc iPVvYb" style="max-width: 1200px; height: 273px; margin: 0.5px 0px; width: 465px;" alt="Kali Linux - Wikipedia" jsname="kn3ccd" aria-hidden="false"></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>首先下载两个需要的文件：</p>
+<p><a target="_blank" rel="noopener" href="https://download3.vmware.com/software/WKST-1700-WIN/VMware-workstation-full-17.0.0-20800274.exe">VMware workstation pro 17</a><br><a target="_blank" rel="noopener" href="https://kali.download/base-images/kali-2023.3/kali-linux-2023.3-vmware-amd64.7z">kali-linux-2023.3-vmware-amd64.7z</a><br>网络不好的同学可以直接下载钉钉群中的文件。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li><p>打开下载好的<code>VMware-workstation-full-17.0.0-20800274.exe</code>按照正常安装软件的流程安装即可，值得注意的是到这一步时记得勾选上<code>增强型键盘驱动程序</code>，忘记了也没关系，后续还可以安装。<br><img src="https://s2.loli.net/2023/10/19/flL2weHtp5dh4B7.png" alt="2021010320265268.png"><br>打开后输入激活码：<code>NZ4RR-FTK5H-H81C1-Q30QH-1V2LA</code>，此时的软件应该永久激活了。<br>如果第一次错过了输入激活码，可以在上方的工具栏中点击<code>帮助-输入许可证秘钥</code>再次输入激活码激活永久版。</p>
+</li>
+<li><p>解压<code>kali-linux-2023.3-vmware-amd64.7z</code>到你认为合适的目录，最好是在一个<code>空间充足</code>的盘下建一个专门用来存放虚拟机的文件夹，因为后续如果你喜欢上linux可能会尝试各种发行版，每个<code>发行版</code>都要占用数G存储空间，笔者此时的虚拟机文件夹已达<code>200G+</code>。如果你所使用的解压缩程序不支持解压<code>.7z</code>文件，我推荐一个<code>开源的</code>解压缩程序<a target="_blank" rel="noopener" href="https://github.com/M2Team/NanaZip">NanaZip</a>，可以支持大部分的压缩格式文件，网络问题无法打开Github的同学可以直接在钉钉群中下载<code>40174MouriNaruto.NanaZip_2.0.450.0_gnj4mf6z9tkrc (1).msixbundle</code>并安装。<br>解压完成之后应该是如下图形式的一个文件夹，到这里就先不用管这个文件了。<br><img src="https://s2.loli.net/2023/10/19/pWYXPSni1RjAFas.png" alt="微信图片_20231019124901.png"></p>
+</li>
+<li><p>打开<code>VMware Workstation Pro</code>，工具栏中选择<code>文件-打开</code>，找到步骤2中解压好的那个文件夹，打开之后其中应该只有一个可以打开的文件，后缀为<code>.vmx</code>，在开启虚拟机之前可以按照自己电脑的配置和存储空间情况自定义一下虚拟机的硬件情况，配置好之后点击<code>开启此虚拟机</code>，第一次开启可能会耗费较长时间，耐心等待。<br><img src="https://s2.loli.net/2023/10/19/6EVYueAzWP7hJfK.png" alt="微信图片_20231019125608.png"></p>
+</li>
+<li><p>一段时间之后，你应该已经来到了kali linux的登录界面，首次登录的用户名和密码均为<code>kali</code>。<br><img src="https://s2.loli.net/2023/10/19/w3IuTonl6RDBPKA.png" alt="微信图片_20231019125934.png"></p>
+</li>
+<li><p>进入到桌面后按快捷键<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>t</kbd>打开一个<code>终端(terminal)</code>，此后你使用linux的操作都要在这个黑色框框中完成。注意，linux中的复制粘贴为<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>。<br>输入命令<code>sudo su</code>并输入密码切换到超级用户，注意，linux中输入密码是没有显示的，不要以为没输上。再执行命令<code>bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh)</code>输入数字快捷更换软件源，我一般喜欢使用科大的源，有<code>ustc lug</code>专门维护，稳定性啥的各方面都不错，也可以执行<code>bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --edu </code>用咱们学校自己的镜像源。<img src="https://s2.loli.net/2023/10/19/lUaOKpiZSNXC1YV.png" alt="微信图片_20231019132349.png"></p>
+</li>
+</ol>
+<p>执行完成后提示<code>是否跳过更新软件包? [Y/n]</code>输入<code>Y</code>（你也可以输入n自动更新，但是想带你们走一下常规流程。）</p>
+<h2 id="安装完系统之后要干的几件事"><a href="#安装完系统之后要干的几件事" class="headerlink" title="安装完系统之后要干的几件事"></a>安装完系统之后要干的几件事</h2><ol>
+<li>获取需要更新的软件包</li>
+</ol>
+<pre><code class="shell">$ sudo apt update      
+[sudo] password for kali: 
+Hit:1 https://mirrors.ustc.edu.cn/kali kali-rolling InRelease
+Reading package lists... Done         
+Building dependency tree... Done
+Reading state information... Done
+847 packages can be upgraded. Run &#39;apt list --upgradable&#39; to see them.
+</code></pre>
+<p>可以解释为：sudo 以root执行，apt 包管理器，update同步系统上的软件包列表。<br>最下边那行则是：有847个可更新的软件包，输入<code>apt list --upgradable</code>来查看有哪些。</p>
+<ol start="2">
+<li>更新软件包</li>
+</ol>
+<pre><code class="shell">$ sudo apt upgrade
+[sudo] password for kali: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+此处会列出一堆软件包的名字
+840 upgraded, 47 newly installed, 0 to remove and 7 not upgraded.
+Need to get 1,799 MB of archives.
+After this operation, 926 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Y
+</code></pre>
+<p>问你是否要更新，Y&#x2F;n。</p>
+<ol start="3">
+<li>更改密码<br><code>$ passwd</code>更改用户<code>kali</code>的密码，输入一下原密码，输入两次新密码即可。</li>
+</ol>
+<p>切换到<code>root</code>用户，<code>$ sudo su</code>，输入<code># passwd</code>更改<code>root</code>用户的密码，输入一下原密码，输入两次新密码即可。</p>
+<p><em>命令之前的”$”、”#”不需要输入，代表不同的权限</em></p>
+<ol start="4">
+<li>安装你需要的软件<br>以安装<code>neofetch</code>举例<br><code>$ sudo apt install neofetch</code>即可</li>
+</ol>
+<p>5.更多命令<br>可以在<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-command-manual.html">这里</a>查看大部分命令，也可以直接搜索你需要的功能用什么命令。</p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>sudo：以超级用户执行后边的命令，经由 sudo 所执行的指令就像是 root 亲自执行。</p>
+<p>apt：高级打包工具（英语：Advanced Packaging Tools，缩写为APT）是Debian及其派生的Linux软件包管理器。APT可以自动下载，配置，安装二进制或者源代码格式的软件包，因此简化了Unix系统上管理软件的过程。</p>
+<p>passwd：password缩写</p>
+<p>开源：开放源代码（英语：Open Source）是一种在电脑程序出品前和开发中提供其内部代码的做法。</p>
+<h2 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h2><p><a target="_blank" rel="noopener" href="https://www.kali.org/">https://www.kali.org/</a><br><a target="_blank" rel="noopener" href="https://linuxmirrors.cn/use/">https://linuxmirrors.cn/use/</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/APT">https://zh.wikipedia.org/zh-cn/APT</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/linux">https://zh.wikipedia.org/zh-cn/linux</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/Kali_Linux">https://zh.wikipedia.org/zh-cn/Kali_Linux</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6">https://zh.wikipedia.org/zh-hans/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6</a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg" alt="License: CC BY-NC 4.0"></a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #ffa2c4">给NSS新人的教程</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Linux/" style="color: #ff7d73">Linux</a>
+        </span>
+        
+    </div>
+    <a href="/2023/10/19/lesson2-%E5%88%9D%E8%AF%86linux/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/10/18/lesson1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%90%84%E6%96%B9%E5%90%91%E4%BB%8B%E7%BB%8D/">
         <h2 class="post-title">lesson1_网络安全各方向介绍</h2>
     </a>
@@ -255,7 +367,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #00a596">给NSS新人的教程</a>
+            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #ffa2c4">给NSS新人的教程</a>
         </span>
         
     </div>
@@ -343,7 +455,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #ffa2c4">给NSS新人的教程</a>
+            <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #00a596">给NSS新人的教程</a>
         </span>
         
     </div>
@@ -438,17 +550,17 @@ qemu-system-riscv64 \
         
         <span class="tag">
             
-            <a href="/tags/RISC-V/" style="color: #00a596">RISC-V</a>
+            <a href="/tags/RISC-V/" style="color: #00bcd4">RISC-V</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/QEMU/" style="color: #00bcd4">QEMU</a>
+            <a href="/tags/QEMU/" style="color: #03a9f4">QEMU</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #ff7d73">Linux</a>
+            <a href="/tags/Linux/" style="color: #00a596">Linux</a>
         </span>
         
     </div>
