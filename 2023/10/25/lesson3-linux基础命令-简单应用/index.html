@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>lesson3-linux基础命令&amp;简单应用 | luciferase&#39;s blog</title>
+    <meta name="author" content="luciferase" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://cdn.staticfile.org" />
+<script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.loli.net" />
+<link rel="preconnect" href="https://gstatic.loli.net" crossorigin />
+<link rel="stylesheet" href="https://fonts.loli.net/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/atom-one-dark.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LUCIFERASE&#39;S BLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://status.luciferase.site/">
+            <i class="fa-solid fa-server fa-fw"></i>
+            <span>&ensp;ServerStatus</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;LUCIFERASE&#39;S BLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <a target="_blank" rel="noopener" href="https://status.luciferase.site/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-server fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">ServerStatus</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>lesson3-linux基础命令&amp;简单应用</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/10/25
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%BB%99NSS%E6%96%B0%E4%BA%BA%E7%9A%84%E6%95%99%E7%A8%8B/" style="color: #00bcd4">给NSS新人的教程</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Linux/" style="color: #ffa2c4">Linux</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本节课程较为填鸭式，但是不难，多为记忆内容，大胆的去操作练习即可。当你需要什么操作的时候尽量不要第一时间想着用图形界面操作，先去想想或者查查用什么命令可以完成。因为在我们以后接触实战时大多数系统是没有图形界面的，所以要尽快适应命令操作。</p>
+<h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><p>如果没有特别指明，本篇中的指令格式为：</p>
+<p>序号. 指令<br>该指令的全写<br><code>$ 该指令的用法</code><br>其他注意事项</p>
+<ol>
+<li><p>ssh<br><code>$ ssh luciferase@127.0.0.1</code><br>同学们如果不理解的话，可以想想windows上的远程桌面(rdp协议)，ssh可以粗略的理解成linux的远程桌面协议，用于从你现在这台机器向‘@’之后的ip地址的目标机器发送连接请求。默认端口是22，指令后边可以加上<code>-p</code>来指定端口，比如<code>$ ssh -p 2222 luciferase@hostname</code>。</p>
+</li>
+<li><p>ls<br>list files，列出文件。<br><code>$ ls</code><br>列出当前目录下的文件和文件夹<br><code>$ ls -a</code>可以列出所有文件和文件夹，包括隐藏文件。<br><code>$ ls -l</code>可以列出文件的详细信息，包括文件的权限、所有者、大小、创建时间等等。<br><code>$ ls -al</code>可以列出所有文件的详细信息，包括隐藏文件。</p>
+</li>
+<li><p>pwd<br>print working directory，打印当前工作目录。<br><code>$ pwd</code></p>
+</li>
+<li><p>cd<br>change directory，改变目录。<br><code>$ cd /home/luciferase</code><br>只输入<code>$ cd</code>会回到当前用户的home目录<br><code>$ cd ..</code>会回到上一级目录<br><code>$ cd ../..</code>会回到上两级目录，以此类推。<br><code>$ cd -</code>会回到上一次所在的目录。</p>
+</li>
+<li><p>mkdir<br>make directory，创建目录。<br><code>$ mkdir test</code>会在当前目录下创建一个名为test的文件夹。</p>
+</li>
+<li><p>touch<br><code>$ touch test.txt</code>会在当前目录下创建一个名为test.txt的文件。<br><code>$ touch welcome to nss</code>会在当前目录下创造三个文件，分别为welcome、to、nss。<br><code>$ touch nss&#123;1..10&#125;.txt</code>会在当前目录下创造10个文件，分别为”nss1.txt、nss2.txt、nss3.txt、nss4.txt、nss5.txt、nss6.txt、nss7.txt、nss8.txt、nss9.txt、nss10.txt。”</p>
+</li>
+<li><p>echo<br><code>$ echo &quot;hello world&quot;</code>会在终端输出hello world。<br><code>$ echo &quot;hello world&quot; &gt; test.txt</code>会在当前目录下创建一个名为test.txt的文件，并将hello world写入该文件。<br><code>$ echo &quot;hello world&quot; &gt;&gt; test.txt</code>会在当前目录下创建一个名为test.txt的文件，并将hello world追加到该文件的末尾。</p>
+</li>
+<li><p>nano<br><code>$ nano test.txt</code>会用nano打开test.txt文件(如果当前目录下没有test.txt的话。它会先在缓存中写入，最后问你要不要保存到名为test.txt文件中)，<br>写完之后Ctrl+x，Y，回车保存。nano是一个文本编辑器，可以用来编辑文本文件。</p>
+</li>
+<li><p>vim<br><code>$ vim test.txt</code>用法暂不详细讲解，遇到问题可以问我。想学的同学可以参考<a target="_blank" rel="noopener" href="https://vim.nauxscript.com/index.html#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">Just Vim It</a>学习<br>比nano更有逼格的文本编辑器，但是上手难度也更高，不太建议新手使用，熟练之后装逼效果拉满。</p>
+</li>
+<li><p>cat<br>concatenate 连锁<br><code>$ cat test.txt</code>会在终端输出test.txt文件的内容。<br><code>$ cat test.txt &gt; test2.txt</code>会将test.txt文件的内容写入test2.txt文件中。<br><code>$ cat test.txt &gt;&gt; test2.txt</code>会将test.txt文件的内容追加到test2.txt文件的末尾。</p>
+</li>
+<li><p>shred<br><code>$ shred test.txt</code>会将test.txt文件重复覆盖，使得即使是昂贵的硬件探测仪器也难以将数据复原,相当于碎纸机的作用。</p>
+</li>
+<li><p>cp<br>Copy file 复制文件<br><code>$ cp test1.txt /home/testdir/</code>将当前文件夹下的test1.txt文件复制到&#x2F;home&#x2F;testdir文件夹下。</p>
+</li>
+<li><p>mv<br>move 移动文件<br><code>$ mv test1.txt /home/luciferase</code>将当前文件夹下的test1.txt文件移动到&#x2F;home&#x2F;luciferase文件夹下</p>
+</li>
+<li><p>clear<br><code>$ clear</code><br>顾名思义，清空当前终端的内容。</p>
+</li>
+<li><p>rm(高危命令)<br>remove 删除文件<br><code>$ rm test.txt</code>删除当前文件夹下的test.txt文件。<br><code>$ rm -r testdir</code>删除当前文件夹下的testdir文件夹，-r表示<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">递归</a>删除，即删除文件夹下的所有文件和文件夹。<br><code>$ rm -rf testdir</code>表示无提示地强制递归删除文件。<br>在你按下回车键时一定要再三确定要删除的目录或者文件路径是否正确，删除操作难以逆转。</p>
+</li>
+<li><p>rmdir<br>remove directory 删除文件夹<br><code>$ rmdir testdir</code>删除当前文件夹下的testdir文件夹，只能删除空文件夹。<br>当文件夹不为空时，可以使用<code>$ rm -r testdir</code>尝试递归删除。</p>
+</li>
+<li><p>whoami<br>字面意思，告诉你当前的用户身份<br><code>$ whoami</code></p>
+</li>
+<li><p>adduser<br>字面意思，添加用户<br><code>$ adduser testuser</code>添加一个名为testuser的用户，按照提示输入密码即可。</p>
+</li>
+<li><p>su<br>switch user 切换用户<br><code>$ su testuser</code>切换到testuser用户，按照提示输入密码即可。<br><code>$ su - testuser</code>切换到testuser用户，并且切换到testuser用户的home目录下。<br><code>$ exit</code>退出当前用户，回到上一个用户。</p>
+</li>
+<li><p>passwd<br><code>$ passwd</code>修改当前用户的密码。<br><code>$ passwd testuser</code>修改testuser用户的密码。<br>一般要用sudo执行。</p>
+</li>
+<li><p>man<br>manual 手册<br><code>$ man apt</code>查看apt的手册（用法），一般为英文，可以自行黏贴翻译，按q退出。</p>
+</li>
+<li><p>whatis<br>字面意思，查看指令的简介<br><code>$ whatis apt</code>查看apt的简介。</p>
+</li>
+<li><p>whereis<br>字面意思，查看指令的位置<br><code>$ whereis apt</code>查看所有apt的位置。</p>
+</li>
+<li><p>which<br>基本只在$PATH路径中搜索，查找范围最小，查找速度快。默认只返回第一个匹配的文件路径。<br><code>$ which apt</code>查看apt的位置。<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">科普：环境变量($PATH)</a></p>
+</li>
+<li><p>wget<br>GNU Wget（常简称为Wget）是一个在网络上进行下载的简单而强大的自由软件，目前它支持通过HTTP、HTTPS，以及FTP这三个最常见的TCP&#x2F;IP协议协议下载。<br><code>$ wget https://www.baidu.com</code>下载百度首页到当前目录下。</p>
+</li>
+<li><p>curl<br>基于网络协议，对指定URL进行网络传输。<br><code>$ curl https://www.baidu.com</code>下载百度首页到当前目录下。<br><code>$ curl https://www.baidu.com &gt; 1.html</code>下载百度的首页存储到文件1.html中</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/eae84ab4d0c6">科普：wget和cURL的区别</a></p>
+<ol start="27">
+<li><p>zip<br>压缩<br><code>$ zip testzip.zip 1.txt</code></p>
+</li>
+<li><p>unzip<br>解压缩<br><code>$ unzip testzip.zip</code></p>
+</li>
+<li><p>cmp<br>compare 比较两个文件的不同<br><code>$ cmp test1.txt test2.txt</code></p>
+</li>
+<li><p>diff<br>Difference 输出确切的两个文件的不同点<br><code>$ diff test1.txt test2.txt</code></p>
+</li>
+<li><p>chmod(高危命令)<br>change mode 控制用户对文件的权限的命令<br>当你当前的用户对某文件无法进行操作时，可以尝试使用chmod命令修改文件的权限。<br><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chmod.html">详见chmod与文件调用权限</a><br><code>$ chmod +x xxx.sh </code></p>
+</li>
+<li><p>chown(高危命令)<br>change owner 设置文件所有者和文件关联组的命令。<br><code>$ chown luciferase /home/luciferase/test.txt</code><br>将&#x2F;home&#x2F;luciferase目录下的test.txt文件所有者设置成luciferase用户。<br>这个命令通常需要root权限执行</p>
+</li>
+<li><p>ifconfig<br>interface config 网络接口配置<br><code>$ ifconfig</code>查看网络接口的配置信息</p>
+</li>
+<li><p>ip address<br><code>$ ip address</code>查看网络接口的配置信息</p>
+</li>
+<li><p>grep<br>Global Regular Expression Print，全局正则表达式版本，用于搜索文本并输出匹配的行。<br><code>$ grep &quot;hello&quot; test.txt</code>在test.txt文件中搜索hello字符串，并输出匹配的行。<br><a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-syntax.html">正则表达式是什么</a><br><code>ip address | grep &quot;eth0&quot; | grep &quot;inet&quot;</code><br>管道符 “|” 的作用：将两个命令隔开，管道符左边命令的输出就会作为管道符右边命令的输入。<br>这行命令是将ip address的结果传递给grep “eth0”的输入，再将<code>ip address | grep &quot;eth0&quot;</code>的结果传递给<code>grep &quot;inet&quot;</code>作为输入，最后输出匹配的行。</p>
+</li>
+<li><p>ping<br><code>$ ping www.baidu.com</code>ping百度的域名，查看网络是否通畅。<br><code>$ ping -c 5 www.baidu.com</code>ping百度的域名5次，取平均值。参数-c代表count</p>
+</li>
+<li><p>netstat<br>network status 网络详情<br><code>$ netstat</code>查看当前的网络状态，包括连接、端口等</p>
+</li>
+<li><p>ufw<br><code>$ sudo ufw allow 22</code>防火墙打开22端口<br><code>$ sudo ufw enable</code>起用防火墙<br><code>$ sudo ufw status</code>查看当前的防火墙详情</p>
+</li>
+<li><p>uname<br><code>$ uname -a</code>查看当前系统内核版本(可以依据此查询是否存在内核漏洞)</p>
+</li>
+<li><p>neofetch(与uname作用类似，但是更漂亮)<br><code>$ sudo apt install neofetch</code>安装neofetch<br><code>$ neofetch</code>查看当前系统的信息</p>
+</li>
+<li><p>free<br><code>$ free</code>查看当前系统剩余多少内存</p>
+</li>
+<li><p>df<br>disk free 查看硬盘空间状态<br><code>$ df -H</code>可以得到一个清晰的列表</p>
+</li>
+<li><p>ps<br>Processes Status 进程详情<br><code>$ ps</code><br><code>$ ps -aux</code><br>-a选项表示显示所有用户的进程，而不仅仅是当前用户的进程。<br>-u选项表示显示进程的详细信息，包括用户名、启动时间、CPU使用率等。<br>因此，ps -aux命令将显示所有用户的进程，并提供详细信息。这是一种常用的查看系统中运行进程的方法。</p>
+</li>
+<li><p>htop<br><code>$ htop</code><br>相当于windows系统上的任务管理器</p>
+</li>
+<li><p>kill(高危指令)<br><code>$ kill 1234</code>杀死进程号为1234的进程<br>相当于windows系统上的任务管理器中的结束进程</p>
+</li>
+<li><p>systemctl(高危指令)<br><code>$ sudo systemctl start firewalld </code>起用firewalld服务<br><code>$ sudo systemctl stop firewalld </code>停用firewalld服务</p>
+</li>
+<li><p>history<br><code>$ history</code>查看历史命令</p>
+</li>
+<li><p>reboot&amp;shutdown<br><code>$ reboot</code>重启系统<br><code>$ shutdown -h now</code>立即关机<br><code>$ shutdown -h 10</code>10分钟后关机</p>
+</li>
+</ol>
+<h2 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h2><p><a target="_blank" rel="noopener" href="https://vim.nauxscript.com/">https://vim.nauxscript.com/</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Wget">https://zh.wikipedia.org/wiki/Wget</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-chown.html">https://www.runoob.com/linux/linux-comm-chown.html</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">https://zh.wikipedia.org/wiki/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F</a><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">https://zh.wikipedia.org/wiki/%E9%80%92%E5%BD%92_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)</a></p>
+<p><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg" alt="License: CC BY-NC 4.0"></a></p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 luciferase&#39;s blog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;luciferase
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+        <div>
+            备案号：
+            
+            <a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20232404">萌ICP备20232404号</a>
+            
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="Luc1ferase/Luc1ferase.github.io"
+    data-repo-id="R_kgDOKddXig"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOKddXis4Caavi"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+</body>
+</html>
